@@ -29,7 +29,7 @@ const paymentVerification = async (req,res) =>{
             razorpay_signature
          })
 
-         res.status(200).redirect(`http://localhost:3000/paymentSuccess?reference=${razorpay_payment_id}`);
+         res.status(200).redirect(`https://atozecommerce.vercel.app/paymentSuccess?reference=${razorpay_payment_id}`);
       }
 }
 
