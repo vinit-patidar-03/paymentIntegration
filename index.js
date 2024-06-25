@@ -9,10 +9,14 @@ connectMongoDB();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use('/payment/v1',require('./routes/paymentRazorpay'));
+app.use(express.urlencoded({ extended: true }));
+app.use('/payment/v1', require('./routes/paymentRazorpay'));
 
-app.get('/getKey',(req,res)=>res.status(200).json({key: process.env.RAZORPAY_KEY_ID}));
-app.listen(PORT,() => {
+app.get('/', (req, res) => {
+    res.send("Working Payment API")
+})
+
+app.get('/getKey', (req, res) => res.status(200).json({ key: process.env.RAZORPAY_KEY_ID }));
+app.listen(PORT, () => {
     console.log(`server is running on http//localhost:${PORT}`);
 })
