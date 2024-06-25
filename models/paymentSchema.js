@@ -5,16 +5,16 @@ const paymentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    razorpay_payment_id:{
+    razorpay_payment_id: {
         type: String,
         required: true
     },
-    razorpay_signature:{
+    razorpay_signature: {
         type: String,
         required: true
     }
 })
 
-const Payment = mongoose.model('Payment',paymentSchema);
+const Payment = mongoose.model('Payment', paymentSchema);
 
 module.exports = Payment;
