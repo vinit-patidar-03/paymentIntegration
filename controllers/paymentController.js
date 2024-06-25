@@ -9,7 +9,6 @@ const createOrderController = async (req, res) => {
             currency: "INR"
         }
         const order = await razorpayInstance.orders.create(options);
-        console.log(order)
         res.status(200).json({ success: true, order });
     } catch (error) {
         res.status(400).send({ success: false, msg: "some error occured" });
